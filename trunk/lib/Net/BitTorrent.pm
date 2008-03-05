@@ -169,8 +169,8 @@
 
         sub use_unicode {
             my ($self, $value) = @_;
-            carp(q[use_unicode is only supported on Win32]) and return
-              unless $^O eq q[MSWin32];
+            #carp(q[use_unicode is only supported on Win32]) and return
+            #  unless $^O eq q[MSWin32];
             return (
                 defined $value
                 ? do {

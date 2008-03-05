@@ -19,4 +19,4 @@ my $client;
 
 ok($client = Net::BitTorrent->new(), q[Net::BitTorrent->new()]);
 
-use Data::Dump qw[pp];
+1;
