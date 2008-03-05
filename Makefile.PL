@@ -68,7 +68,7 @@ WriteMakefile(
 #PREOP => q[svn commit -m "make dist" && pod2text .\lib\Net\BitTorrent.pm > README]
         PREOP => q[svn commit -m "make dist"]
     },
-    test => {TESTS => join q[ ], @tests},
+    test => { TESTS => join q[ ], @tests },
 
     #SIGN=> 1 # doesn't play nice with my .svn dirs
 );

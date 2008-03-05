@@ -106,7 +106,9 @@ sub directory {
     File::Find::find(
         sub {
             return if not -e or not -f;
+	    return if $File::Find::name =~ m[\.svn]i;
             return unless m[\.(?:jpg|txt)$];
+	    warn sprintf q[%s|%s],$_, $File::Find::name;
             push(
                 @{$info{$self}{q[files]}},
                 {   path     => [File::Spec->splitdir($_)],
@@ -171,7 +173,7 @@ $torrent->directory(q[./miniswarm/seed/]);
 warn $torrent->piece_count(12);
 
 $torrent->comment(q[See credit.txt for attributions.]);
-$torrent->name(q[/]);
+$torrent->name(q[seed]);
 
 $torrent->save;
 

@@ -161,7 +161,7 @@
                 my %query_hash = (
                     q[info_hash]  => $infohash,
                     q[peer_id]    => $peer_id,
-                    q[port]       => $session{$self}->client->LocalPort,
+                    q[port]       => $session{$self}->client->sockport,
                     q[uploaded]   => $session{$self}->uploaded,
                     q[downloaded] => $session{$self}->downloaded,
                     q[left]       => (
