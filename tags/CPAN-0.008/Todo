@@ -1,0 +1,55 @@
+TODO list for Perl module Net::BitTorrent
+
+High priorities:
+- Documentation
+  + Incomplete/missing
+    - Net::BitTorrent
+    - Net::BitTorrent::FAQ
+    - Net::BitTorrent::Session
+    - Net::BitTorrent::Session::File
+    - Net::BitTorrent::Session::Peer
+    - Net::BitTorrent::Session::Peer::Request
+    - Net::BitTorrent::Session::Piece
+    - Net::BitTorrent::Session::Piece::Block
+    - Net::BitTorrent::Session::Tracker
+- Complete callback system
+- Endgame (untested)
+- Trackers need the correct event param
+
+Short term goals:
+- The return of Fast Extension aka 'Fast Peers'
+- Bugs
+  + Cannot remove torrents that have open handles (I'm lazy)
+- Improve handling of slow pieces
+- client.pl?
+  + -skip_hashcheck should try to load the bitfield from disk?
+  + occasional storage of the bitfield to disk on hash_pass?
+- finish test suite
+- limit number of unchoked peers
+
+Long term goals:
+- Internal bans for 'bad' peers
+  + Penalty (and eventual ban) for peers who always seem involved
+    with bad pieces
+- taint safe
+- Disconnect when both are seeds
+- IP-filter based bans
+- improve file handling
+  + .piece file to store incoming blocks
+- Limits for transfer bandwidth
+- UDP trackers
+- Extensions
+  + DHT/PEX
+  + Wire protocol encryption?
+  + Extension protocol?
+  + Extension Negotiation Protocol?
+  + BitComet Extension Protocol?
+- N::B::Lite - barebones client?
+  + Single class
+  + No extentions
+  + Trimmed API
+- gui-client.pl?
+  + very light gui example using perl/TK
+- perlcritic severity=stern?
+
+$Id$
